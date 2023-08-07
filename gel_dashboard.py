@@ -52,7 +52,8 @@ matrix = st.sidebar.multiselect("Select Matrix", df["Matrix"].unique())
 
 df_selection = df.query("Sample == @samples") 
 df_selection2 = df.query("Matrix == @matrix")
-df_selection3 = df_selection.append(df_selection2)
+df_selection3 = pd.concat([df_selection, df_selection2])
+# df_selection3 = df_selection.append(df_selection2)
 
 st.dataframe(df_selection3)
 
