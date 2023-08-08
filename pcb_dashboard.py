@@ -93,8 +93,8 @@ fig1.update_layout(mapbox_style = "open-street-map")
 # Radar chart
 water = df[df["Matrix"] == "Water"]
 radar1 = px.line_polar(water,
-                         r = np.mean(water[["AR 1260", "AR 1254", "AR 1242", "AR 1248"]]),
-                         theta = ["AR 1260", "Ar 1254", "AR 1242", "AR 1248"],
+                         r = water[["AR 1260", "AR 1254", "AR 1242", "AR 1248"]].mean(),
+                         theta = ["AR 1260", "AR 1254", "AR 1242", "AR 1248"],
                          line_close = True,
                          title = "Mean Of PCB Concentrations in Water (ug/L)")
 radar1.update_traces(fill = 'toself')
