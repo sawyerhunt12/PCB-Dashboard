@@ -103,7 +103,7 @@ radar1.update_polars(angularaxis_tickcolor = "red", radialaxis_color = "black")
 
 
 soil = df[df["Matrix"] == "Soil"]
-radar2 = px.line_polar(water,
+radar2 = px.line_polar(soil,
                          r = np.mean(soil[["AR 1260", "AR 1254", "AR 1242", "AR 1248"]]),
                          theta = ["AR 1260", "AR 1254", "AR 1242", "AR 1248"],
                          line_close = True,
@@ -114,7 +114,7 @@ radar2.update_polars(angularaxis_tickcolor = "red", radialaxis_color = "black")
 
 
 oil = df[df["Matrix"] == "Oil"]
-radar3 = px.line_polar(water,
+radar3 = px.line_polar(oil,
                          r = np.mean(oil[["AR 1260", "AR 1254", "AR 1242", "AR 1248"]]),
                          theta = ["AR 1260", "AR 1254", "AR 1242", "AR 1248"],
                          line_close = True,
